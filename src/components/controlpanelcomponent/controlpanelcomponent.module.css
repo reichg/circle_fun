@@ -1,0 +1,40 @@
+.buttonContainer {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.buttonStart {
+  background-color: rgb(34, 137, 34);
+  padding: 10px;
+}
+
+.buttonStop {
+  background-color: rgb(159, 4, 4);
+  padding: 10px;
+}
+
+.buttonClear {
+  background-color: rgb(170, 170, 170);
+  padding: 10px;
+}
+
+.sliderControl {
+  /* display: flex;
+  justify-content: space-evenly; */
+  display: flex;
+  justify-content: center;
+  background-color: rgb(165, 165, 165);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 0px 0px 0px #000000, -1px 0px 0px 0px #000000;
+  padding: 5px 20px;
+}

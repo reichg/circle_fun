@@ -1,0 +1,15 @@
+.canvasContainer {
+  overflow: hidden;
+  text-align: center;
+  outline: auto;
+  padding: 30px;
+}
+
+.componentContainer {
+  margin: 40px;
+  background-color: grey;
+  outline: auto;
+  padding: 15px;
+}
+
+
