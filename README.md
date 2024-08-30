@@ -2,6 +2,9 @@
 
 This little React application allows you to control how the canvas renders a circle. 
 
+Depencies:
+* NodeJS
+
 To use this app all you have to do is:
 
 1. Clone the repo.
@@ -16,11 +19,14 @@ To use this app all you have to do is:
 
 ## General
 
-https://github.com/user-attachments/assets/fac2387b-d15b-46c4-b5dc-fcd869a5210e
+https://github.com/user-attachments/assets/bae2bfe6-105c-477d-b62d-38569978cf25
+
+
 
 <br/>
 
 ## Resizing
 
-https://github.com/user-attachments/assets/0e09f2ed-67a5-4402-8c2c-44b4e6db4a51
+https://github.com/user-attachments/assets/6d1465a3-8c56-4142-96cb-3786eb94ecca
+
 
