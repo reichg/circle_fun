@@ -1,8 +1,7 @@
 .buttonContainer {
   display: flex;
-  gap: 50px;
+  gap: 20px;
   justify-content: center;
-  margin: 20px;
 }
 
 .buttonStart {
@@ -27,16 +26,31 @@
   background-color: rgb(165, 165, 165);
   padding: 10px;
   border-radius: 8px;
+  width: 90%;
+  outline: auto;
 }
 
 .sliders {
-  width: 120px;
-  max-width: 120px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 1px 0px 0px 0px #000000, -1px 0px 0px 0px #000000;
-  padding: 5px 20px;
-  margin: 10px 0px;
+  box-shadow: 0px 1px 0px 0px #000000, 0px 0px 0px 0px #000000;
+  padding: 10px 20px;
+  margin: 0px 0px;
+}
+
+input {
+  width: 100%;
+}
+
+.controlPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 400px;
+
 }

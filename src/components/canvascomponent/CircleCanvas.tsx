@@ -4,13 +4,12 @@ import ControlPanel from "../controlpanelcomponent/ControlPanel";
 
 function CircleCanvas() {
   // All of the controls
-  const [radius, setRadius] = useState<number>(20);
+  const [radius, setRadius] = useState<number>(200);
   const [numDots, setNumdots] = useState<number>(50);
   const [color, setColor] = useState<string>("#2866c9");
   const [dotSize, setDotSize] = useState<number>(10);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const [animationSpeed, setAnimationSpeed] = useState<number>(60);
-  const [scale, setScale] = useState<number>(10);
 
   // Refs for canvas
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -20,8 +19,8 @@ function CircleCanvas() {
 
   // Static canvas size
   const canvasSize = {
-    width: 700,
-    height: 700,
+    width: 550,
+    height: 550,
   };
 
   const startAnimation = () => {
@@ -46,7 +45,7 @@ function CircleCanvas() {
     }
   };
 
-  // Draws grid lines 
+  // Draws grid lines
   const drawGrid = () => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
@@ -101,12 +100,12 @@ function CircleCanvas() {
     ctx.font = "16px Arial";
 
     // X-axis label
-    ctx.fillText(`${canvasSize.width}px`, width / 2 + 2, height - 5);
+    ctx.fillText(`${canvasSize.width / 2}px`, width / 2 + 2, height - 5);
 
     // Y-axis label - rotated for vertical text
     ctx.save(); // Save the current state
     ctx.translate(0, height / 2 - 5);
-    ctx.fillText(`${canvasSize.height}px`, 0, 0);
+    ctx.fillText(`${canvasSize.height / 2}px`, 0, 0);
     ctx.restore(); // Restore to the original state
   };
 
@@ -140,7 +139,7 @@ function CircleCanvas() {
           const angle = (currentDotRef.current * 2 * Math.PI) / numDots;
           const x = radius * Math.cos(angle);
           const y = radius * Math.sin(angle);
-          drawDot(ctx, x * scale, y * scale, color); // Active color, scale coordinates for larger display
+          drawDot(ctx, x, y, color); // Active color, scale coordinates for larger display
           currentDotRef.current += 1;
           lastTimestampRef.current = timestamp;
         } else {
@@ -169,33 +168,31 @@ function CircleCanvas() {
   }, [isAnimating, animationSpeed]);
 
   return (
-    <div className={styles.componentContainer}>
-      <div className={styles.canvasContainer}>
+    <div className={styles.circleCanvasContainer}>
+      <div className={styles.componentContainer}>
         <canvas
           ref={canvasRef}
           width={canvasSize.width}
           height={canvasSize.height}
         />
-      </div>
 
-      <ControlPanel
-        animationSpeed={animationSpeed}
-        isAnimating={isAnimating}
-        radius={radius}
-        setRadius={setRadius}
-        numDots={numDots}
-        setNumDots={setNumdots}
-        color={color}
-        setColor={setColor}
-        scale={scale}
-        dotSize={dotSize}
-        setDotSize={setDotSize}
-        setAnimationSpeed={setAnimationSpeed}
-        setScale={setScale}
-        startAnimation={startAnimation}
-        stopAnimation={stopAnimation}
-        clearCanvas={clearCanvas}
-      />
+        <ControlPanel
+          animationSpeed={animationSpeed}
+          isAnimating={isAnimating}
+          radius={radius}
+          setRadius={setRadius}
+          numDots={numDots}
+          setNumDots={setNumdots}
+          color={color}
+          setColor={setColor}
+          dotSize={dotSize}
+          setDotSize={setDotSize}
+          setAnimationSpeed={setAnimationSpeed}
+          startAnimation={startAnimation}
+          stopAnimation={stopAnimation}
+          clearCanvas={clearCanvas}
+        />
+      </div>
     </div>
   );
 }

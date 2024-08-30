@@ -8,8 +8,6 @@ interface ControlPanelProps {
   isAnimating: boolean;
   animationSpeed: number;
   setAnimationSpeed: (animationSpeed: number) => void;
-  scale: number;
-  setScale: (scale: number) => void;
   dotSize: number;
   setDotSize: (dotSize: number) => void;
   radius: number;
@@ -28,8 +26,6 @@ function ControlPanel(props: ControlPanelProps) {
     isAnimating,
     animationSpeed,
     setAnimationSpeed,
-    scale,
-    setScale,
     dotSize,
     setDotSize,
     radius,
@@ -73,22 +69,10 @@ function ControlPanel(props: ControlPanelProps) {
             id="speedControl"
             type="range"
             min="10"
-            max="500"
+            max="400"
             step="10"
             value={animationSpeed}
             onChange={(e) => setAnimationSpeed(Number(e.target.value))}
-          />
-        </div>
-        <div className={styles.sliders}>
-          <label htmlFor="scaleControl">Scale: {scale}x</label>
-          <input
-            id="scaleControl"
-            type="range"
-            min="1"
-            max="15"
-            step="1"
-            value={scale}
-            onChange={(e) => setScale(Number(e.target.value))}
           />
         </div>
         <div className={styles.sliders}>
@@ -109,7 +93,7 @@ function ControlPanel(props: ControlPanelProps) {
             id="radiusSizeControl"
             type="range"
             min="5"
-            max="40"
+            max="275"
             step="1"
             value={radius}
             onChange={(e) => setRadius(Number(e.target.value))}
@@ -121,7 +105,7 @@ function ControlPanel(props: ControlPanelProps) {
             id="numDotsControl"
             type="range"
             min="30"
-            max="100"
+            max="150"
             step="1"
             value={numDots}
             onChange={(e) => setNumDots(Number(e.target.value))}
