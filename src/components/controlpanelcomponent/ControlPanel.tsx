@@ -1,6 +1,7 @@
 import styles from "./controlpanelcomponent.module.css";
 
 interface ControlPanelProps {
+  // All of the necessary state attributes that the controlpanel will manipulate
   startAnimation: () => void;
   stopAnimation: () => void;
   clearCanvas: () => void;
@@ -36,18 +37,30 @@ function ControlPanel(props: ControlPanelProps) {
     numDots,
     setNumDots,
     color,
-    setColor
+    setColor,
   } = props;
   return (
     <div className={styles.controlPanel}>
       <div className={styles.buttonContainer}>
-        <button className={styles.buttonStart} onClick={startAnimation} disabled={isAnimating}>
+        <button
+          className={styles.buttonStart}
+          onClick={startAnimation}
+          disabled={isAnimating}
+        >
           Start Animation
         </button>
-        <button className={styles.buttonStop} onClick={stopAnimation} disabled={!isAnimating}>
+        <button
+          className={styles.buttonStop}
+          onClick={stopAnimation}
+          disabled={!isAnimating}
+        >
           Stop Animation
         </button>
-        <button className={styles.buttonClear} onClick={clearCanvas} disabled={isAnimating}>
+        <button
+          className={styles.buttonClear}
+          onClick={clearCanvas}
+          disabled={isAnimating}
+        >
           Clear Canvas
         </button>
       </div>
@@ -66,7 +79,6 @@ function ControlPanel(props: ControlPanelProps) {
             onChange={(e) => setAnimationSpeed(Number(e.target.value))}
           />
         </div>
-
         <div className={styles.sliders}>
           <label htmlFor="scaleControl">Scale: {scale}x</label>
           <input
