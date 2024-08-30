@@ -3,6 +3,7 @@ import styles from "./circle.module.css";
 import ControlPanel from "../controlpanelcomponent/ControlPanel";
 
 function CircleCanvas() {
+  // All of the controls
   const [radius, setRadius] = useState<number>(20);
   const [numDots, setNumdots] = useState<number>(50);
   const [color, setColor] = useState<string>("#2866c9");
@@ -11,11 +12,13 @@ function CircleCanvas() {
   const [animationSpeed, setAnimationSpeed] = useState<number>(60);
   const [scale, setScale] = useState<number>(10);
 
+  // Refs for canvas
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const requestIdRef = useRef<number | null>(null);
   const currentDotRef = useRef<number>(0);
   const lastTimestampRef = useRef<number>(0);
 
+  // Static canvas size
   const canvasSize = {
     width: 700,
     height: 700,
@@ -43,6 +46,7 @@ function CircleCanvas() {
     }
   };
 
+  // Draws grid lines 
   const drawGrid = () => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
@@ -87,6 +91,7 @@ function CircleCanvas() {
     }
   };
 
+  // Label with the canvas width and height
   const addAxisLabels = (
     ctx: CanvasRenderingContext2D,
     width: number,
@@ -105,6 +110,7 @@ function CircleCanvas() {
     ctx.restore(); // Restore to the original state
   };
 
+  // Draws each dot
   const drawDot = (
     ctx: CanvasRenderingContext2D,
     x: number,
@@ -122,6 +128,7 @@ function CircleCanvas() {
     ); // Center the square
   };
 
+  // Animation loop
   const animate = (timestamp: number) => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
@@ -143,6 +150,7 @@ function CircleCanvas() {
     }
   };
 
+  // Want to draw this first and only once.
   useEffect(() => {
     drawGrid();
   }, []);

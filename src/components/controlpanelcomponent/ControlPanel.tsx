@@ -116,7 +116,7 @@ function ControlPanel(props: ControlPanelProps) {
           />
         </div>
         <div className={styles.sliders}>
-          <label htmlFor="colorControl">Dot Color: {color} </label>
+          <label htmlFor="colorControl">Dot Color</label>
           <input
             id="colorControl"
             type="color"
