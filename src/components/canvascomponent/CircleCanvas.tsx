@@ -136,6 +136,7 @@ function CircleCanvas() {
     if (ctx && canvas && isAnimating) {
       if (timestamp - lastTimestampRef.current >= animationSpeed) {
         if (currentDotRef.current < numDots) {
+          // calculate where the dot coordinates are. 2PI radians in a full circle
           const angle = (currentDotRef.current * 2 * Math.PI) / numDots;
           const x = radius * Math.cos(angle);
           const y = radius * Math.sin(angle);
