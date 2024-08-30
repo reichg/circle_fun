@@ -9,3 +9,7 @@ To use this app all you have to do is:
 3. run `npm install`.
 4. run `npm run dev`.
 5. The app will be avialable at `http://localhost:5173/`
+<br/>
+
+https://github.com/user-attachments/assets/fac2387b-d15b-46c4-b5dc-fcd869a5210e
+
